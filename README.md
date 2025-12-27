@@ -1,70 +1,154 @@
-# Getting Started with Create React App
+# NearbyDoc - Doctor Appointment Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack doctor appointment booking platform with React frontend and Node.js/Express backend.
 
-## Available Scripts
 
-In the project directory, you can run:
+<img width="2511" height="1303" alt="Screenshot 2025-12-25 220101" src="https://github.com/user-attachments/assets/6899368c-f7ba-4948-b1d4-634b4a7886b7" />
 
-### `npm start`
+<img width="2507" height="1305" alt="Screenshot 2025-12-25 220120" src="https://github.com/user-attachments/assets/2c4b479e-1606-44b1-a1d6-b9c481a79b81" />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img width="2506" height="1296" alt="Screenshot 2025-12-25 220142" src="https://github.com/user-attachments/assets/5eb60619-ff0b-476c-90ce-443cda140e55" />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+🚀 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+User Authentication: Sign up and login functionality
 
-### `npm run build`
+Doctor Directory: Browse and search doctors by specialty
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Appointment Booking: Schedule appointments with doctors
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Appointment Management: View and track your appointments
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+User Profile: Manage your personal information
 
-### `npm run eject`
+Responsive Design: Modern, medical-professional UI
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Real-time Notifications: Get feedback on your actions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Offline Mode: Works even without backend connection
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+📋 Prerequisites
+Before you begin, ensure you have installed:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Node.js (v14 or higher)
 
-## Learn More
+npm (v6 or higher)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🛠️ Installation & Setup
+Backend Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Navigate to the backend directory (where server.js is located)
 
-### Code Splitting
+Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+bashnpm install
 
-### Analyzing the Bundle Size
+Start the backend server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+bashnpm start
+Or for development with auto-reload:
+bashnpm run dev
+The server will start on http://localhost:3001
+Frontend Setup
 
-### Making a Progressive Web App
+Create a new React project (if you haven't already):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+bashnpx create-react-app nearbydoc-frontend
+cd nearbydoc-frontend
 
-### Advanced Configuration
+Install required dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+bashnpm install lucide-react
 
-### Deployment
+Replace the contents of src/App.js with the code from nearbydoc-app-fixed.jsx
+Start the React development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+bashnpm start
+The app will open at http://localhost:3000
+📡 API Endpoints
+Authentication
 
-### `npm run build` fails to minify
+POST /api/auth/signup - Create new user account
+POST /api/auth/login - Login user
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Doctors
+
+GET /api/doctors - Get all doctors
+GET /api/doctors/:id - Get specific doctor
+
+Appointments
+
+POST /api/appointments - Book new appointment
+GET /api/appointments/:userId - Get user's appointments
+GET /api/appointments/detail/:appointmentId - Get appointment details
+DELETE /api/appointments/:appointmentId - Cancel appointment
+
+User
+
+GET /api/users/:userId - Get user profile
+
+Health Check
+
+GET /api/health - Check API status
+
+🎯 Usage Guide
+1. Sign Up / Login
+
+Open the app at http://localhost:3000
+Click "Sign Up" tab
+Fill in your details (Name, Email, Password, Phone)
+Click "Create Account"
+You'll be logged in automatically
+
+2. Find Doctors
+
+Browse the list of available doctors
+Use the search bar to find specific doctors or specialties
+Filter by specialty using the category buttons
+View doctor ratings, experience, and availability
+
+3. Book Appointment
+
+Click "Book Appointment" on any doctor card
+Select your preferred date
+Choose an available time slot
+Enter the reason for your visit
+Click "Confirm Appointment"
+
+4. View Appointments
+
+Click "Appointments" in the sidebar
+See all your scheduled appointments
+View appointment details including date, time, and location
+
+5. Profile Management
+
+Click "Profile" in the sidebar
+View your account information
+See your membership details and total appointments
+
+🔧 Configuration
+Backend Configuration
+Edit server.js to configure:
+
+Port number (default: 3001)
+CORS settings
+Add database connection (MongoDB, PostgreSQL, etc.)
+
+Frontend Configuration
+Edit nearbydoc-app-fixed.jsx to configure:
+
+API base URL (default: http://localhost:3001/api)
+Styling and theme colors
+Available time slots
+
+🗄️ Database Setup (Optional)
+Currently uses in-memory storage. To add persistent database:
+Using MongoDB
+bashnpm install mongoose
+Using PostgreSQL
+bashnpm install pg
+Then update server.js to connect to your database.
+
+
